@@ -1,0 +1,84 @@
+{
+  "version": 6,
+  "configurePresets": [
+    {
+      "name": "default",
+      "displayName": "Default",
+      "description": "Default system conditional build",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      },
+      "environment": {
+        "CC": "clang",
+        "CXX": "clang++"
+      }
+    },
+    {
+      "name": "system-deps",
+      "displayName": "System dependencies",
+      "description": "Link against system libraries",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build-system-deps",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "2FSIQA_USE_SYSTEM_ZLIB_NG": "ON",
+        "2FSIQA_USE_SYSTEM_LIBPNG": "ON",
+        "2FSIQA_USE_SYSTEM_LIBJPEG": "ON",
+        "2FSIQA_USE_SYSTEM_LIBTIFF": "ON",
+        "2FSIQA_USE_SYSTEM_LIBWEBP": "ON",
+        "2FSIQA_USE_SYSTEM_LIBAVIF": "ON",
+        "2FSIQA_USE_SYSTEM_LCMS2": "ON",
+        "2FSIQA_USE_SYSTEM_HIGHWAY": "ON",
+        "2FSIQA_LIBCXX": "system",
+        "2FSIQA_ARCH_FLAGS": ""
+      },
+      "environment": {
+        "CC": "clang",
+        "CXX": "clang++"
+      }
+    },
+    {
+      "name": "static-with-cxx-compile",
+      "displayName": "Static with cxx",
+      "description": "Static build with libcxx compilation from source",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/static-with-cxx",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "2FSIQA_USE_SYSTEM_ZLIB_NG": "OFF",
+        "2FSIQA_USE_SYSTEM_LIBPNG": "OFF",
+        "2FSIQA_USE_SYSTEM_LIBJPEG": "OFF",
+        "2FSIQA_USE_SYSTEM_LIBTIFF": "OFF",
+        "2FSIQA_USE_SYSTEM_LIBWEBP": "OFF",
+        "2FSIQA_USE_SYSTEM_LIBAVIF": "OFF",
+        "2FSIQA_USE_SYSTEM_LCMS2": "OFF",
+        "2FSIQA_USE_SYSTEM_HIGHWAY": "OFF",
+        "2FSIQA_LIBCXX": "static_owned",
+        "2FSIQA_ARCH_FLAGS": ""
+      },
+      "environment": {
+        "CC": "clang",
+        "CXX": "clang++"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "default",
+      "configurePreset": "default",
+      "displayName": "Build default"
+    },
+    {
+      "name": "system-deps",
+      "configurePreset": "system-deps",
+      "displayName": "Build with system dependencies"
+    },
+    {
+      "name": "static-with-cxx-compile",
+      "configurePreset": "static-with-cxx-compile",
+      "displayName": "Build everything including libcxx"
+    }
+  ]
+}
