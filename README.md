@@ -111,3 +111,13 @@ Curvature *gammas* and weights were tuned on [CID22](https://cloudinary.com/labs
 | CID22 validation set | 0.7134 | 0.8957 | 0.8837 |
 | KADID-10k            | 0.6904 | 0.8742 | 0.8649 |
 | TID2013              | 0.6975 | 0.8755 | 0.8841 |
+
+
+
+### Example
+
+To help you estimate the metric's expected behavior and sensitivity, here is an illustration showing how it reacts to JPEG compression.<br>
+Note that all scores are relative and will differ for each image. However, this graph still provides a general idea of what "good" or "bad" scores are.
+<br>
+
+![2fsiqa example response to the quality of the JPEG](2fsiqa_on_cjpeg.webp)
