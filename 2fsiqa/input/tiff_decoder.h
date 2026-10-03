@@ -278,16 +278,12 @@ inline ImageInfo decode_tiff(const uint8_t* file_bytes, size_t file_byte_count,
         image.height = height;
         if (is_half_float) {
             image.bit_depth = 32;
-            image.reported_bit_depth = 10;
         } else if (sample_format == SAMPLEFORMAT_IEEEFP && bits_per_sample == 32) {
             image.bit_depth = 32;
-            image.reported_bit_depth = 23;
         } else if (sample_format == SAMPLEFORMAT_IEEEFP && bits_per_sample == 64) {
             image.bit_depth = 64;
-            image.reported_bit_depth = 52;
         } else {
             image.bit_depth = static_cast<int>(bits_per_sample);
-            image.reported_bit_depth = image.bit_depth;
         }
         image.channels = color_channels;
         image.has_alpha = has_alpha;

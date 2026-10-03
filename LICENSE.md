@@ -1,8 +1,7 @@
-# 2fsiqa
-GNU Affero General Public License (AGPL)
+2fsiqa as a whole is licensed under the GNU Affero General Public License (AGPL-3.0-or-later)
 
-	2fsiqa - Composite Image Quality Assessment Metric
-	Copyright (C) 2026 DAPTYX
+	2fsiqa - Composite Image Quality Assessment Metric - https://github.com/DAPTYX/2fsiqa
+	Copyright (C) 2026 DAPTYX - daptyx@gmail.com
 
 	This program is free software: you can redistribute it and/or modify
 	it under the terms of the GNU Affero General Public License as
@@ -17,16 +16,13 @@ GNU Affero General Public License (AGPL)
 	You should have received a copy of the GNU Affero General Public License
 	along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+---
 
-# Based on and does not include original or modified code:
+Credits and notices:
 
-	## 2FS-dssim
-		Based on dssim by Kornel Lesiński - https://github.com/kornelski/dssim
+  2fsiqa includes modified code and a direct copy of the code from:
 
-
-# Includes modified code and a direct copy of the code from:
-
-	## JPEG XL Project - [butteraugli and ssimulacra2]
+	JPEG XL Project - [butteraugli and ssimulacra2]
 				Copyright (c) the JPEG XL Project Authors.
 				All rights reserved.
 
@@ -57,7 +53,7 @@ GNU Affero General Public License (AGPL)
 
 
 
-	## VMAF
+	VMAF
 				LICENSE - BSD+Patent
 				SPDX short identifier: BSD-2-Clause-Patent
 
@@ -100,3 +96,6 @@ GNU Affero General Public License (AGPL)
 				SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
 				WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 				OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+				
+				
+  2FS-dssim is based on dssim by Kornel Lesiński - https://github.com/kornelski/dssim

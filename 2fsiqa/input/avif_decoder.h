@@ -106,7 +106,6 @@ inline ImageInfo decode_avif(const uint8_t* file_bytes, size_t file_byte_count,
     info.width = image->width;
     info.height = image->height;
     info.bit_depth = static_cast<int>(out_depth);
-    info.reported_bit_depth = static_cast<int>(file_depth);
     info.sample_type = SampleType::Integer;
     info.has_alpha = has_alpha;
     info.channels = is_gray ? 1 : 3;

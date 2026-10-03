@@ -68,7 +68,7 @@ function(toofsiqa_write_third_party_notices)
         toofsiqa_notice_append(_body "libpng"
             "${2FSIQA_LIBPNG_GIT_REPOSITORY}" "${2FSIQA_LIBPNG_GIT_TAG}"
             "${libpng_SOURCE_DIR}"
-            "Copyright (c) 1995-2026 The PNG Reference Library Authors.\nCopyright (c) 2018-2026 Cosmin Truta.\nCopyright (c) 2000-2002, 2004, 2006-2018 Glenn Randers-Pehrson.\nCopyright (c) 1996-1997 Andreas Dilger.\nCopyright (c) 1995-1996 Guy Eric Schalnat, Group 42, Inc.")
+            "Copyright (c) 1995-2026 The PNG Reference Library Authors\nCopyright (c) 2018-2026 Cosmin Truta\nCopyright (c) 2000-2002, 2004, 2006-2018 Glenn Randers-Pehrson\nCopyright (c) 1996-1997 Andreas Dilger\nCopyright (c) 1995-1996 Guy Eric Schalnat, Group 42, Inc.")
     endif()
 
     if(NOT 2FSIQA_USE_SYSTEM_LIBJPEG)
@@ -76,7 +76,7 @@ function(toofsiqa_write_third_party_notices)
         toofsiqa_notice_append(_body "libjpeg-turbo"
             "${2FSIQA_LIBJPEG_GIT_REPOSITORY}" "${2FSIQA_LIBJPEG_GIT_TAG}"
             "${libjpeg_SOURCE_DIR}"
-            "Copyright (C) 2009-2026 D. R. Commander\nCopyright (C) 2015-2021, 2023 Mozilla Foundation\nCopyright (C) 2018-2023 Randy randy408@protonmail.com")
+            "Copyright (C) 2009-2026 D. R. Commander\nCopyright (C) 2018-2023 Randy randy408@protonmail.com")
     endif()
 
     if(NOT 2FSIQA_USE_SYSTEM_LIBTIFF)
@@ -84,7 +84,7 @@ function(toofsiqa_write_third_party_notices)
         toofsiqa_notice_append(_body "libtiff"
             "${2FSIQA_LIBTIFF_GIT_REPOSITORY}" "${2FSIQA_LIBTIFF_GIT_TAG}"
             "${libtiff_SOURCE_DIR}"
-            "Copyright (c) 1988-1997 Sam Leffler\nCopyright (c) 1991-1997 Silicon Graphics, Inc.")
+            "Copyright © 1988-1997 Sam Leffler\nCopyright © 1991-1997 Silicon Graphics, Inc.")
     endif()
 
     if(NOT 2FSIQA_USE_SYSTEM_LIBWEBP)
@@ -92,7 +92,7 @@ function(toofsiqa_write_third_party_notices)
         toofsiqa_notice_append(_body "libwebp"
             "${2FSIQA_LIBWEBP_GIT_REPOSITORY}" "${2FSIQA_LIBWEBP_GIT_TAG}"
             "${libwebp_SOURCE_DIR}"
-            "Copyright (c) 2010, Google Inc. All rights reserved.")
+            "Copyright (c) 2010, Google Inc")
     endif()
 
     if(NOT 2FSIQA_USE_SYSTEM_LIBAVIF)
@@ -100,7 +100,7 @@ function(toofsiqa_write_third_party_notices)
         toofsiqa_notice_append(_body "libavif"
             "${2FSIQA_LIBAVIF_GIT_REPOSITORY}" "${2FSIQA_LIBAVIF_GIT_TAG}"
             "${libavif_SOURCE_DIR}"
-            "Copyright 2019 Joe Drago. All rights reserved.")
+            "Copyright 2019 Joe Drago")
         set(_dav1d_src "")
         if(DEFINED dav1d_SOURCE_DIR)
             set(_dav1d_src "${dav1d_SOURCE_DIR}")
@@ -110,7 +110,7 @@ function(toofsiqa_write_third_party_notices)
         toofsiqa_notice_append(_body "dav1d (via libavif)"
             "https://code.videolan.org/videolan/dav1d.git" ""
             "${_dav1d_src}"
-            "Copyright (c) 2018-2025, VideoLAN and dav1d authors")
+            "Copyright © 2018-2025, VideoLAN and dav1d authors")
     endif()
 
     if(NOT 2FSIQA_USE_SYSTEM_LCMS2)
@@ -118,7 +118,7 @@ function(toofsiqa_write_third_party_notices)
         toofsiqa_notice_append(_body "Little-CMS"
             "${2FSIQA_LCMS2_GIT_REPOSITORY}" "${2FSIQA_LCMS2_GIT_TAG}"
             "${lcms2_SOURCE_DIR}"
-            "Copyright (c) 1998-2026 Marti Maria Saguer")
+            "Copyright (c) 2023 Marti Maria Saguer")
     endif()
 
     if(NOT 2FSIQA_USE_SYSTEM_HIGHWAY)
@@ -126,7 +126,7 @@ function(toofsiqa_write_third_party_notices)
         toofsiqa_notice_append(_body "highway"
             "${2FSIQA_HIGHWAY_GIT_REPOSITORY}" "${2FSIQA_HIGHWAY_GIT_TAG}"
             "${highway_SOURCE_DIR}"
-            "Copyright (c) The Highway Project Authors. All rights reserved.")
+            "Copyright (c) The Highway Project Authors")
     endif()
 
     if(2FSIQA_LIBCXX STREQUAL "static_owned")
@@ -134,7 +134,7 @@ function(toofsiqa_write_third_party_notices)
         toofsiqa_notice_append(_body "libcxx / libcxxabi / libunwind (LLVM)"
             "${2FSIQA_LIBCXX_GIT_REPOSITORY}" "${2FSIQA_LIBCXX_GIT_TAG}"
             "${llvm_project_SOURCE_DIR}"
-            "Copyright (c) 2003-2019 University of Illinois at Urbana-Champaign.\nCopyright (c) 2009-2024 by the contributors listed in CREDITS.TXT\nAll rights reserved.")
+            "Copyright (c) 2003-2019 University of Illinois at Urbana-Champaign")
     endif()
 
     if(NOT _any)

@@ -47,7 +47,6 @@ struct PairMetrics {
     double vmaf = 0.0;
     bool psnr_infinite = false;
     bool psnr_all_infinite = false;
-    int reported_bit_depth = 0;
     bool has_psnr = false;
     bool has_ssim = false;
     bool has_dssim = false;

@@ -14,7 +14,6 @@ struct ImageInfo {
     uint32_t width = 0;
     uint32_t height = 0;
     int bit_depth = 0;
-    int reported_bit_depth = 0;
     int channels = 0;
     bool has_alpha = false;
     SampleType sample_type = SampleType::Integer;

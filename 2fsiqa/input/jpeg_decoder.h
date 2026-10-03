@@ -179,7 +179,6 @@ inline ImageInfo decode_jpeg(const uint8_t* file_bytes, size_t file_byte_count,
     image.width = cinfo.output_width;
     image.height = cinfo.output_height;
     image.bit_depth = output_precision;
-    image.reported_bit_depth = file_precision;
     image.sample_type = SampleType::Integer;
     image.has_alpha = false;
 

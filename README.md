@@ -4,7 +4,7 @@
 <br>
 A command-line tool that helps you put a number on the perceptual similarities between two images.
 
-**2fsiqa** score range is <mark>~-0.6 – 1.0</mark>, where:
+**2fsiqa** score range is <mark>~-0.9 – 1.0</mark>, where:
 
    <mark>**1.0**</mark>  — pair is identical<br><br>
    <mark>**Score > 0.0**</mark> — similar, with some differences (closer to 1.0 means more similar)<br><br>
@@ -108,9 +108,9 @@ Curvature *gammas* and weights were tuned on [CID22](https://cloudinary.com/labs
 
 |        Dataset       |  KRCC  |  SRCC  |  PCC   |
 |----------------------|--------|--------|--------|
-| CID22 validation set | 0.7134 | 0.8957 | 0.8837 |
-| KADID-10k            | 0.6904 | 0.8742 | 0.8649 |
-| TID2013              | 0.6975 | 0.8755 | 0.8841 |
+| CID22 validation set | 0.7130 | 0.8959 | 0.8824 |
+| KADID-10k            | 0.6914 | 0.8748 | 0.8671 |
+| TID2013              | 0.7012 | 0.8777 | 0.8851 |
 
 
 

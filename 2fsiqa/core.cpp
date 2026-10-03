@@ -36,6 +36,8 @@
 #include <unistd.h>
 #endif
 
+static constexpr const char* ver = "1.0 [2026.09.30]";
+
 static constexpr uint32_t kCoreMinSide = 8;
 static constexpr uint32_t kVmafMinSide = 64;
 
@@ -148,10 +150,8 @@ static std::unique_ptr<double[]> allocate_source_double(const ImageInfo& info) {
 }
 
 static PairMetrics compute_psnr_ssim(const WorkingImage& working_a, const WorkingImage& working_b,
-                                     bool want_psnr, bool want_ssim,
-                                     int reported_bit_depth) {
+                                     bool want_psnr, bool want_ssim) {
     PairMetrics metrics;
-    metrics.reported_bit_depth = reported_bit_depth;
     if (!want_psnr && !want_ssim) {
         return metrics;
     }
@@ -184,7 +184,7 @@ static PairMetrics compute_psnr_ssim(const WorkingImage& working_a, const Workin
                 working_a.total_samples, working_a.channels);
 
             const double peak2 = working_a.peak * working_a.peak;
-            const double fallback = psnr_inf_fallback_peak(reported_bit_depth);
+            const double fallback = ToofsiqaConstants{}.psnr_peak;
 
             double channel_psnr[3];
             bool channel_inf[3];
@@ -243,7 +243,6 @@ static PairMetrics compute_psnr_ssim(const WorkingImage& working_a, const Workin
 
 ToofsiqaInputs metrics_to_toofsiqa_inputs(const PairMetrics& metrics) {
     ToofsiqaInputs inputs;
-    inputs.reported_bit_depth = metrics.reported_bit_depth;
     inputs.psnr_all_infinite = metrics.psnr_all_infinite;
     if (metrics.has_psnr && !metrics.psnr_all_infinite) {
         inputs.psnr = metrics.psnr;
@@ -640,11 +639,9 @@ static PairMetrics compare_decoded(OwnedDecodedImage image_a,
     }
 
     PairMetrics metrics;
-    metrics.reported_bit_depth = image_a.info.reported_bit_depth;
     if (want_g22) {
         metrics = compute_psnr_ssim(working_g22_a.view, working_g22_b.view,
-                                    selection.psnr, selection.ssim,
-                                    image_a.info.reported_bit_depth);
+                                    selection.psnr, selection.ssim);
         working_g22_a.storage.reset();
         working_g22_b.storage.reset();
         working_g22_a.view.data = nullptr;
@@ -685,10 +682,11 @@ static PairMetrics compare_decoded(OwnedDecodedImage image_a,
 static void print_usage(const char* program) {
     std::cerr
         << "  2fsiqa - Composite Image Quality Assessment Metric\n"
+        << "  Version: " << ver << "\n"
         << "\n"
         << "  This tool can help you estimate the perceptual difference between pairs of images\n"
 		<< "\n"
-		<< "  2fsiqa score range is ~-0.6 - 1.0, where:\n"
+		<< "  2fsiqa score range is ~-0.9 - 1.0, where:\n"
 		<< "\n"
 		<< "  1.0  — pair is identical\n"
 		<< "  Score > 0.0 - similar, with some differences (closer to 1.0 means more similar)\n"

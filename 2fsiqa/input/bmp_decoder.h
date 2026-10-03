@@ -554,7 +554,6 @@ inline ImageInfo decode_bmp(const uint8_t* file_bytes, size_t file_byte_count,
     info.width = static_cast<uint32_t>(header.width);
     info.height = header.height;
     info.bit_depth = 8;
-    info.reported_bit_depth = 8;
     info.sample_type = SampleType::Integer;
     info.channels = 3;
 

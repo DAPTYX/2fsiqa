@@ -86,7 +86,6 @@ inline ImageInfo decode_webp(const uint8_t* file_bytes, size_t file_byte_count,
     image.width = static_cast<uint32_t>(width);
     image.height = static_cast<uint32_t>(height);
     image.bit_depth = 8;
-    image.reported_bit_depth = 8;
     image.channels = 3;
     image.has_alpha = has_alpha;
     image.sample_type = SampleType::Integer;

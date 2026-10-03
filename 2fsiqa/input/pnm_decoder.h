@@ -81,17 +81,6 @@ inline float read_ascii_float(Cursor& c) {
     return value;
 }
 
-inline int bits_for_maxval(uint32_t maxval) {
-    if (maxval <= 1u) return 1;
-    int bits = 0;
-    uint32_t v = maxval;
-    while (v > 0u) {
-        ++bits;
-        v >>= 1;
-    }
-    return bits;
-}
-
 inline int storage_depth_for_maxval(uint32_t maxval) {
     if (maxval <= 255u) return 8;
     if (maxval <= 65535u) return 16;
@@ -430,7 +419,6 @@ inline ImageInfo decode_pnm(const uint8_t* file_bytes, size_t file_byte_count,
     if (header.is_float) {
         info.sample_type = SampleType::Float32;
         info.bit_depth = 32;
-        info.reported_bit_depth = header.is_half ? 10 : 23;
         const size_t spp =
             static_cast<size_t>(info.channels) + (info.has_alpha ? 1u : 0u);
         info.row_bytes = static_cast<size_t>(info.width) * spp * sizeof(float);
@@ -444,8 +432,6 @@ inline ImageInfo decode_pnm(const uint8_t* file_bytes, size_t file_byte_count,
     const int out_depth = pnm_detail::storage_depth_for_maxval(header.maxval);
     info.sample_type = SampleType::Integer;
     info.bit_depth = out_depth;
-    info.reported_bit_depth = pnm_detail::bits_for_maxval(header.maxval);
-    if (info.reported_bit_depth < 1) info.reported_bit_depth = 1;
 
     const size_t spp =
         static_cast<size_t>(info.channels) + (info.has_alpha ? 1u : 0u);

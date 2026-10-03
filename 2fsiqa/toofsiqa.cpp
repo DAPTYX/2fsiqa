@@ -52,11 +52,8 @@ std::optional<double> compute_toofsiqa(const ToofsiqaInputs& inputs,
         quality_score += norm * weight;
     };
 
-    if (inputs.psnr.has_value() && include_psnr_in_toofsiqa(inputs.reported_bit_depth)) {
-        accumulate(inputs.psnr, psnr_toofsiqa_peak(inputs.reported_bit_depth),
-                   constants.psnr_zero, constants.weight_psnr,
-                   constants.gamma_psnr, false);
-    }
+    accumulate(inputs.psnr, constants.psnr_peak, constants.psnr_zero,
+               constants.weight_psnr, constants.gamma_psnr, false);
 
     accumulate(inputs.ssim, constants.ssim_peak, constants.ssim_zero,
                constants.weight_ssim, constants.gamma_ssim, false);

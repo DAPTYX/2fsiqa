@@ -8,5 +8,3 @@ double compute_mse(const float* reference, const float* distorted, size_t total_
 
 std::array<double, 3> compute_mse_channels(const float* reference, const float* distorted,
                                            size_t total_samples, int channels);
-
-double psnr_inf_fallback_peak(int reported_bit_depth);

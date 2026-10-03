@@ -142,19 +142,3 @@ std::array<double, 3> compute_mse_channels(const float* reference, const float* 
     return result;
 }
 
-double psnr_inf_fallback_peak(int reported_bit_depth) {
-    if (reported_bit_depth <= 1) return 20.52743879660661719;
-    if (reported_bit_depth == 2) return 24.36265906048794250;
-    if (reported_bit_depth == 3) return 32.71917969101289003;
-    if (reported_bit_depth == 4) return 39.38691762192354417;
-    if (reported_bit_depth == 5) return 45.33571334135487518;
-    if (reported_bit_depth == 6) return 51.89406430624571698;
-    if (reported_bit_depth == 7) return 57.47154941911067283;
-    if (reported_bit_depth == 8) return 64.17501352899263622;
-    if (reported_bit_depth == 9) return 70.14780319047090984;
-    if (reported_bit_depth == 10) return 76.13639401939916240;
-    if (reported_bit_depth == 11) return 82.14104159915294190;
-    if (reported_bit_depth == 12) return 88.15141572085119037;
-    if (reported_bit_depth == 13) return 94.11150058205750213;
-    return 144.737197309002645795;
-}

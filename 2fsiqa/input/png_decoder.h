@@ -76,7 +76,6 @@ inline ImageInfo decode_png(const uint8_t* file_bytes, size_t file_byte_count,
     image.width     = png_get_image_width(png, png_info);
     image.height    = png_get_image_height(png, png_info);
     image.bit_depth = png_get_bit_depth(png, png_info);
-    image.reported_bit_depth = image.bit_depth;
     const int color_type = png_get_color_type(png, png_info);
 
     if (image.width == 0 || image.height == 0) {
